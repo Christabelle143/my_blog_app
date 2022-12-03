@@ -18,7 +18,7 @@ RSpec.describe Post, type: :model do
     end
 
     it 'validates the author_id is an integer' do
-        expect(@post.author_id).to eq(1)
+      expect(@post.author_id).to eq(1)
     end
-end
+  end
 end
