@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   before(:each) do
-    @user = User.new(id: 1, name: 'Ben', bio: 'I am a content creator', photo: '', posts_counter: 0)
-    @post = Post.new(title: 'Post1', text: 'Text...', comments_counter: 0, likes_counter: 1, author_id: @user.id)
+    @user = User.new(id: 1, name: 'Ben', bio: 'I am a content creator', photo: '', postsCounter: 0)
+    @post = Post.new(title: 'Post1', text: 'Text...', commentsCounter: 0, likesCounter: 1, author_id: @user.id)
     @like = Like.new(author_id: @user.id, post_id: @user.id)
   end
 
