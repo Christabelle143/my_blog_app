@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   # validates_numericality_of :commentsCounter, only_integer: true, greater_than_or_equal: 0
   # validates_numericality_of :likesCounter, only_integer: true, greater_than_or_equal: 0
 
-  after_save :update_postsCounter
+  after_save :update_posts_counter
 
   def most_recent_comments
     comments.order(created_at: :DESC).limit(5)
@@ -17,8 +17,7 @@ class Post < ApplicationRecord
 
   private
 
-  def update_postsCounter
+  def update_posts_counter
     author.increment!(:postsCounter)
   end
-
 end
