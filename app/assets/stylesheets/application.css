@@ -45,3 +45,8 @@ section {
   padding: 1rem;
   background-color: #ccc;
 }
+
+
+.d-none {
+    display: none;
+  }
