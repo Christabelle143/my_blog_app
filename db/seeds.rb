@@ -46,13 +46,13 @@ post2 = user1.posts.create!(title: 'Population', text: lorem_two, commentsCounte
 
 post3 = user2.posts.create!(title: 'Science', text: lorem_one, commentsCounter: 0, likesCounter: 0)
 post4 = user2.posts.create!(title: 'Education', text: lorem_two, commentsCounter: 0, likesCounter: 0)
-post5 = user2.posts.create!(title: 'Business', text: lorem_third, commentscounter: 0, likescounter: 0)
+post5 = user2.posts.create!(title: 'Business', text: lorem_third, commentsCounter: 0, likesCounter: 0)
 
-post6 = user3.posts.create!(title: 'Sports', text: lorem_one, commentsCounter: 0, likescounter: 0)
+post6 = user3.posts.create!(title: 'Sports', text: lorem_one, commentsCounter: 0, likesCounter: 0)
 post7 = user3.posts.create!(title: 'Agriculture', text: lorem_two, commentsCounter: 0, likesCounter: 0)
 post8 = user3.posts.create!(title: 'School', text: lorem_third, commentsCounter: 0, likesCounter: 0)
 post9 = user3.posts.create!(title: 'Sport', text: lorem_four, commentsCounter: 0, likesCounter: 0)
-post10 = user3.posts.create!(title: 'Arts', text: lorem_five, commentscounter: 0, likesCounter: 0)
+post10 = user3.posts.create!(title: 'Arts', text: lorem_five, commentsCounter: 0, likesCounter: 0)
 post11 = user3.posts.create!(title: 'Univer', text: lorem_two, commentsCounter: 0, likesCounter: 0)
 
 post12 = user4.posts.create!(title: 'Programming', text: lorem_one, commentsCounter: 0, likesCounter: 0)
