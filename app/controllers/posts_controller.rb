@@ -3,11 +3,12 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = @user.posts
   end
+
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    @comments = @post.comments
-    @likes = @post.likes_counter + 1
+    @comments = @post.most_recent_comments
+    @likes = @post.likesCounter + 1
   end
 
   def create
@@ -23,6 +24,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
+    params.require(:post).permit(:title, :text, :commentsCounter, :likesCounter)
   end
 end
