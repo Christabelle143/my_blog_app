@@ -125,12 +125,20 @@ run `rubocop -a` and hit enter.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> We will soon introduce following features.
-
-- [ ] **
-- [ ] **
-- [ ] **
-
+> These are features that will be add to the project.
+> - [X] Ticked features represents implemented features
+> - [ ] Un ticked features represents features being worked on
+- [X] **Creating a data model**
+- [X] **Processing data in models**
+- [X] **Validations and Model specs**
+- [X] **Setup and controllers**
+- [X] **Controllers specs**
+- [X] **Views**
+- [X] **Add forms**
+- [ ] **Integration specs for Views and fixing `n+1` problems**
+- [ ] **Add Devise**
+- [ ] **Add authorization rules**
+- [ ] **Add API endpoints.**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
