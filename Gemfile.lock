@@ -234,9 +234,11 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap-sass
   capybara
   debug
-  font-awesome-rails
+    font-awesome-rails
+  font-awesome-sass
   ffi
   importmap-rails
   jbuilder

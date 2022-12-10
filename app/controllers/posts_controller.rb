@@ -3,29 +3,26 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = @user.posts
   end
-
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    @comments = @post.most_recent_comments
+    @comments = @post.comments
+    @likes = @post.likes_counter + 1
   end
 
-  def create 
+  def create
     @user = User.find(params[:user_id])
     @post = @user.posts.create(post_params)
     @post.save
-    redirect_to user_posts_path(@user)  
+    redirect_to user_posts_path(@user)
   end
 
-  def new 
+  def new
     @user = User.find(params[:user_id])
     @post = @user.posts.new
-
   end
 
-
-
   def post_params
-    params.require(:post).permit(:title, :text, :commentsCounter, :likesCounter)
+    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
   end
 end
