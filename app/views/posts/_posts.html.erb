@@ -6,8 +6,8 @@
       <p><%= post.text[0..25] %> ...</p>
     </div>
     <div class="actions d-flex">
-      <span>Comments: <%= post.comments_counter%></span>
-      <span>Likes: <%= post.likes_counter%></span>
+      <span>Comments: <%= post.commentsCounter%></span>
+      <span>Likes: <%= post.likesCounter%></span>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
       <p>No comments !!!</p>
     <% end %>
   
-    <% post.comments.order('created_at DESC').limit(5).each do |comment|%>
+    <% @post.most_recent_comments.order('created_at DESC').limit(5).each do |comment|%> 
       <div class="comment-container">
         <span><%=comment.author.name %>:</span>
         <span><%=comment.text %></span>

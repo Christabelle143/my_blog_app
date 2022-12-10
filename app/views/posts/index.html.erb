@@ -13,13 +13,24 @@
     </div>
   </article>
 
-  <%# <div class="posts">
-    <%= render  @posts %>
-  <%# </div> %> 
-  <div class="post-btn">
+    <div class="posts">
+    <% @posts.each do | post | %>
+      <div class="post-container"> 
+        <div class="post">
+          <h3><%= post.title %></h3>
+          <p><%= post.text[0..25] %> ...</p>
+        </div>
+        <div class="actions d-flex">
+          <span>Comments: <%= post.commentsCounter%></span>
+          <span>Likes: <%= post.likesCounter%></span>
+        </div>
+    </div>
+    <% end %>
+    
+  </div> 
+    <div class="post-btn">
     <button>
-      <%= link_to "back", user_path(@user)%>
+      <%= link_to "back", users_path%>
     </button>
   </div>
-
-</section>
+</section> 
