@@ -1,15 +1,14 @@
 <section class="posts-details">
   <h1>show posts details</h1>
-
-  <% render  @post %>
-  <% render 'posts/post', post: @post %>
+  <%# <% render  @post %>
+  <%# <% render 'posts/post', post: @post %> 
 
   <div class="post-detail">
     <div class="title-details d-flex">
       <h3><%= @post.title %> by <%= @user.name%></h3>
       <div>
-        <span>Comments: <%= @post.comments_counter%></span>
-        <span>Likes: <%= @post.likes_counter%></span>
+        <span>Comments: <%= @post.commentsCounter%></span>
+        <span>Likes: <%= @post.likesCounter%></span>
       </div>
     </div>
 
@@ -22,7 +21,7 @@
     <% end %>
     <% @comments.each do |comment|%>
       <div class="comment-container">
-        <span><%=comment.author.name %>:</span>
+      <span><%= @user.name %>:</span>
         <span><%=comment.text %></span>
       </div>
     <% end %>
@@ -31,6 +30,18 @@
   <div class="post-btn">
     <button>
       <%= link_to "back",  user_posts_path(@user)%>
+    </button>
+  </div>
+  
+  <div class="add-post-btn d-flex">
+    <button>
+      <%= link_to "Add Comment", new_user_post_comment_path(@user, @post)%>
+    </button>
+  </div>
+
+  <div class="add-post-btn d-flex"> 
+    <button>
+      <%= button_to "Add Like", user_post_likes_path(@user, @post)%>
     </button>
   </div>
 </section>

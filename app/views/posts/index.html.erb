@@ -2,7 +2,6 @@
   <h1>Show all Posts of a user</h1>
 
   <% render 'users/user', user: @user %>
-
    <article class="user d-flex">
     <div class="img-container">
       <img src="<%= @user.photo %>" alt="User_Photo">
@@ -13,8 +12,9 @@
     </div>
   </article>
 
-   <div class="posts">
+    <div class="posts">
     <% @posts.each do | post | %>
+    <%= link_to user_post_path(@user, post) do %>
       <div class="post-container"> 
         <div class="post">
           <h3><%= post.title %></h3>
@@ -26,11 +26,17 @@
         </div>
     </div>
     <% end %>
+     <% end %>
+    
   </div> 
-
     <div class="post-btn">
     <button>
       <%= link_to "back", users_path%>
+    </button>
+  </div>
+    <div class="add-post-btn d-flex">
+    <button>
+      <%= link_to "Add Post", new_user_post_path(@user)%>
     </button>
   </div>
 </section> 
