@@ -12,19 +12,20 @@ Rspec.describe 'User index page features', type: :feature, js:  true do
     visit users_path
     end
 
-    it 'should show all the pictures of the users' do
+    describe 'I can see' do
+       it 'the profile picture for each user' do
         images = page.all('img')
         user_names = page.all('div h2')
         expect(images.size).to eql(user_names.size)
     end
 
-    it 'should show the number of posts of each user' do
+       it 'the number of posts each user has written' do
         subscribers = page.all('article div span')
         expect(subscribers[0]).to have_content 'Number of posts: 16'
         expect(subscribers[1]).to have_content 'Number of posts: 3'
     end
 
-    it 'should redirect to that user\'s show page when I click on a user.' do
+       it 'should redirect to that user\'s show page when I click on a user.' do
         click_link 'John Doe'
         expect(page).to have_current_path user_path(@user1)
       end
