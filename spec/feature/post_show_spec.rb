@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Post Index Page Features', type: :feature, js: true do
   before(:each) do
-    visit user_session_path
 
     @photo = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/58/ballot-box-with-x_2612.png'
 
@@ -40,48 +39,32 @@ RSpec.describe 'Post Index Page Features', type: :feature, js: true do
   end
 
   describe 'I can see' do
-    it 'the user\'s profile picture' do
-      image = page.find('img')['src']
-      expect(image).to eql @photo
-    end
-
-    it 'the user\'s username' do
-      expect(page).to have_content 'John Doe'
-    end
-
-    it 'the number of posts the user has written' do
-      expect(page).to have_content('Number of posts: 16')
-    end
-
-    it 'some post\'s title.' do
-      expect(page).to have_content 'Education'
+    it "post's title" do
       expect(page).to have_content 'Sport'
     end
 
-    it 'some of the post\'s body.' do
-      expect(page).to have_content 'This is first Educat post!'
+    it 'who wrote the post.' do
+      expect(page).to have_content 'John Doe'
+    end
+
+    it 'how many comments it has.' do
+      expect(page).to have_content 'Comments: 1'
+    end
+
+    it 'how many likes it has.' do
+      expect(page).to have_content 'Likes: 1'
+    end
+
+    it 'the post body.' do
       expect(page).to have_content 'This is second Sport post!'
     end
 
-    it 'the first comments on a post.' do
+    it 'the username of each commentor.' do
+      expect(page).to have_content 'John Doe'
+    end
+
+    it 'the comment each commentor left.' do
       expect(page).to have_content 'Really nice post'
-    end
-
-    it 'how many comments a post has' do
-      expect(page).to have_content('Comments: 2')
-    end
-
-    it 'how many likes a post has' do
-      expect(page).to have_content('Likes: 2')
-    end
-
-    it 'a section for pagination if there are more posts than fit on the view.' do
-      expect(page).to have_content('Add Post')
-    end
-
-    it 'When I click on a post, it redirects me to that post\'s show page.' do
-      click_link 'Education'
-      expect(page).to have_current_path user_post_path(@user1, @post1)
     end
   end
 end
