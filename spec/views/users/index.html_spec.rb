@@ -6,9 +6,9 @@ RSpec.describe 'User index page features', type: :feature do
     @photo = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/58/ballot-box-with-x_2612.png'
    
     @user1 = User.create!(name: 'John Doe', bio: 'This is John Doe bio', photo: @photo, postsCounter: 16)
-    # @user2 = User.create!(
-    #     name: 'Michal Smith', bio: 'This is Michal Smith bio', photo: @photo, postsCounter: 3
-    #   )
+    @user2 = User.create!(
+        name: 'Michal Smith', bio: 'This is Michal Smith bio', photo: @photo, postsCounter: 3
+      )
     visit users_path
     end
 
