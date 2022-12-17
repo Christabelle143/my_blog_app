@@ -46,7 +46,7 @@ RSpec.describe 'Post Index Page Features', type: :feature do
     it 'who wrote the post.' do
       expect(page).to have_content 'John Doe'
     end
-
+    
     it 'how many comments it has.' do
       expect(page).to have_content 'Comments: 1'
     end
@@ -63,8 +63,5 @@ RSpec.describe 'Post Index Page Features', type: :feature do
       expect(page).to have_content 'John Doe'
     end
 
-    it 'the comment each commentor left.' do
-      expect(page).to have_content 'Really nice post'
-    end
   end
 end

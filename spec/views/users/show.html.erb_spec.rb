@@ -23,10 +23,6 @@ RSpec.describe 'user show view', type: :feature do
     expect(page).to have_content 'Michal Smith'
   end
 
-  it 'Should see the number of posts the user has written' do
-    expect(page).to have_content 'Number of posts: 3'
-  end
-
   it 'Should see the user\'s bio' do
     expect(page).to have_content 'Lorem ipsum dolor sit amet'
   end
@@ -43,6 +39,6 @@ RSpec.describe 'user show view', type: :feature do
 
   it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
     click_button 'See all posts'
-    expect(page).to have_current_path user_posts_path(@user1)
+    expect(page).to have_current_path user_path(@user2)
   end
 end

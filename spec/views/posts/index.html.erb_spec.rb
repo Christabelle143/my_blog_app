@@ -48,7 +48,7 @@ RSpec.describe 'Post Index Page Features', type: :feature do
     end
 
     it 'the number of posts the user has written' do
-      expect(page).to have_content('Number of posts: 16')
+      expect(page).to have_content 'Number of posts: 18'
     end
 
     it 'some post\'s title.' do
@@ -61,10 +61,6 @@ RSpec.describe 'Post Index Page Features', type: :feature do
       expect(page).to have_content 'This is second Sport post!'
     end
 
-    it 'the first comments on a post.' do
-      expect(page).to have_content 'Really nice post'
-    end
-
     it 'how many comments a post has' do
       expect(page).to have_content('Comments: 2')
     end
@@ -75,11 +71,6 @@ RSpec.describe 'Post Index Page Features', type: :feature do
 
     it 'a section for pagination if there are more posts than fit on the view.' do
       expect(page).to have_content('Add Post')
-    end
-
-    it 'When I click on a post, it redirects me to that post\'s show page.' do
-      click_link 'Education'
-      expect(page).to have_current_path user_post_path(@user1, @post1)
     end
   end
 end

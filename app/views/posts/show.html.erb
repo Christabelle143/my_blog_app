@@ -19,7 +19,8 @@
     <% if @comments == [] %>
       <p>No comments !!!</p>
     <% end %>
-    <% @comments.each do |comment|%>
+    <%# <% @comments.each do |comment|%> 
+     <% @comments.includes([:author]).each do |comment| %>
       <div class="comment-container">
       <span><%= @user.name %>:</span>
         <span><%=comment.text %></span>
