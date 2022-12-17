@@ -37,6 +37,12 @@ RSpec.describe 'user show view', type: :feature do
     expect(page).to have_content 'See all posts'
   end
 
+  it 'displays number of posts for each user' do
+    User.all.each do |user|
+      expect(page).to have_content "Number of posts: #{user.postsCounter}"
+    end
+  end
+
   it 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
     click_button 'See all posts'
     expect(page).to have_current_path user_path(@user2)

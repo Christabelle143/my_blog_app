@@ -13,6 +13,12 @@ RSpec.describe 'User index page features', type: :feature do
   end
 
   describe 'I can see' do
+    it 'display the username of all users' do
+      User.all.each do |user|
+        expect(page).to have_content(user.name)
+      end
+    end
+
     it 'the profile picture for each user' do
       images = page.all('img')
       user_names = page.all('div h2')
