@@ -69,7 +69,8 @@ h1 {
 
 section {
   max-width: 640px;
-  margin: 1.5rem auto;
+  /* margin: 1.5rem auto; */
+  margin: 0 auto 2rem;
   padding: 1rem;
   background-color: #ccc;
 }
