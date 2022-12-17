@@ -28,7 +28,7 @@ RSpec.describe 'Post Index Page Features', type: :feature do
     @user2.comments.create!(text: 'Fantastic', post: @post2)
 
     # likes
-    
+
     @user1.likes.create!(post: @post1)
     @user1.likes.create!(post: @post2)
     @user2.likes.create!(post: @post1)

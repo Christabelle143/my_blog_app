@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Post Index Page Features', type: :feature do
   before(:each) do
-
     @photo = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/58/ballot-box-with-x_2612.png'
 
     @user1 = User.create!(
@@ -29,7 +28,7 @@ RSpec.describe 'Post Index Page Features', type: :feature do
     @user2.comments.create!(text: 'Fantastic', post: @post2)
 
     # likes
-    
+
     @user1.likes.create!(post: @post1)
     @user1.likes.create!(post: @post2)
     @user2.likes.create!(post: @post1)
@@ -46,7 +45,7 @@ RSpec.describe 'Post Index Page Features', type: :feature do
     it 'who wrote the post.' do
       expect(page).to have_content 'John Doe'
     end
-    
+
     it 'how many comments it has.' do
       expect(page).to have_content 'Comments: 1'
     end
@@ -62,6 +61,5 @@ RSpec.describe 'Post Index Page Features', type: :feature do
     it 'the username of each commentor.' do
       expect(page).to have_content 'John Doe'
     end
-
   end
 end
