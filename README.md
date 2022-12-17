@@ -119,6 +119,12 @@ run `rubocop -a` and hit enter.
 - Twitter: [@christabelleyo](https://twitter.com/christabelleyo)
 - LinkedIn: [YoutaChristabelle](https://linkedin.com/in/YoutaChristabelle)
 
+👤 **Chimwemwe MKandawire**
+
+- GitHub: [chimwemwe007](https://github.com/chimwemwe007)
+- Twitter: [@chxmz](https://twitter.com/chxmz)
+- LinkedIn: [chimwemwe-mkandawire](https://linkedin.com/in/chimwemwe-mkandawire)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
